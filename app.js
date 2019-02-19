@@ -17,7 +17,7 @@ passport.use(new FacebookStrategy({
   clientSecret: "42c91d6ed308bc42c91d6ed308",
 
 
-  callbackURL: 'https://arcane-atoll-42610.herokuapp.com/auth/facebook/callback',
+  callbackURL: 'https://git.heroku.com/locapic.git',
 
 
   profileFields: ['id', 'first_name', 'last_name', 'email']
@@ -25,6 +25,8 @@ passport.use(new FacebookStrategy({
 },
 function(accessToken, refreshToken, profile, done) {
 
+  profile._json
+  
   return done(null, profile._json);
 
 }));
